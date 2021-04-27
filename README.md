@@ -4,7 +4,9 @@ El proyecto esta generado con [Angular CLI](https://github.com/angular/angular-c
 
 ## Pre requisitos para la ejecucion 
 
-Tener instalado y Node , npm ,CLI Angular
+1.- Tener instalado y Node , npm ,CLI Angular
+
+2.- El projecto backend Corriendo [clinic-backend](https://github.com/luisnlbs4/clinic-backend)
 ## Levantar en servidor local para su uso 
 
 1.- Ejecutar el comando `npm i` estando en el directorio del proyecto.
