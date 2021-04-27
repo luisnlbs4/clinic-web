@@ -1,0 +1,37 @@
+<div class="margin-5">
+    <h2>Consulta para el Paciente {{patientInformation.name}} {{ patientInformation.lastName}}</h2>
+    <hr>
+
+    <form [formGroup]="consultForm">
+        <div field>
+            <mat-form-field>
+                <input matInput placeholder="Descripcion" formControlName="description">
+                <mat-error>Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div field>
+            <mat-form-field>
+                <input matInput placeholder="Prescripcion" formControlName="prescription">
+                <mat-error>Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <br>
+        <div field>
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccione un Doctor</mat-label>
+                <mat-select formControlName="doctorId">
+                    <mat-option *ngFor="let doctor of doctorsInformation" [value]="doctor.id">
+                        {{doctor.name}} {{doctor.lastName}} ({{doctor.specialty}})
+                    </mat-option>
+                </mat-select>
+                <mat-error>Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <br>
+        <div buttons>
+            <button mat-raised-button matStepperNext color="primary" (click)='saveConsult()'>Guardar</button>
+        </div>
+    </form>
+
+</div>

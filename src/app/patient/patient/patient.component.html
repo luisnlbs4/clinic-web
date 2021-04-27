@@ -1,0 +1,44 @@
+<div class="margin-5">
+  <h2>Paciente</h2>
+  <hr>
+
+  <form [formGroup]="patientForm">
+    <div field>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="name">
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div field>
+      <mat-form-field>
+        <input matInput placeholder="Apellido" formControlName="lastName">
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div field>
+      <mat-form-field>
+        <input matInput placeholder="Direccion" formControlName="address">
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div field>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDay" [max]="maxDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+
+    <div buttons>
+      <button mat-raised-button matStepperNext color="primary" (click)='savePatient()'>Guardar</button>
+    </div>
+
+  </form>
+
+</div>
